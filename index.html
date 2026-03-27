@@ -1,1 +1,244 @@
-COming soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0-1D | The Unified Single-Wire Digital Standard</title>
+    <style>
+        :root {
+            --primary-purple: #8A2BE2;
+            --dark-bg: #0f0f12;
+            --card-bg: #1a1a20;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --accent-glow: rgba(138, 43, 226, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-purple);
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-purple);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 1rem;
+            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-button {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #2a2a35;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-purple);
+            margin-top: 0;
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 0 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #2a2a35;
+        }
+
+        th {
+            background: #252530;
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .highlight {
+            background: rgba(138, 43, 226, 0.1);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 1rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid #2a2a35;
+        }
+
+        .wire-visual {
+            height: 4px;
+            width: 100px;
+            background: var(--primary-purple);
+            margin: 20px auto;
+            box-shadow: 0 0 10px var(--primary-purple);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">0-<span>1D</span> ALLIANCE</div>
+    <nav>
+        <a href="#">Technology</a>
+        <a href="#">Specs</a>
+        <a href="#">Certification</a>
+        <a href="#">About</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>The Future is Single-Wire.</h1>
+    <p>Modernizing North America’s lighting infrastructure by evolving 0-10V analog into a high-speed digital protocol—using the wires you already have.</p>
+    <a href="https://www.linkedin.com" class="cta-button">Download Specification v1.0</a>
+    <div class="wire-visual"></div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>Unicore™ Modulation</h3>
+        <p>By injecting a high-frequency carrier wave directly onto the 0-10V control line, 0-1D achieves bidirectional data without a return path.</p>
+    </div>
+    <div class="feature-card">
+        <h3>50% Wire Reduction</h3>
+        <p>Why pay for two wires? 0-1D utilizes the physical structural impedance of the building to complete the circuit. It's wireless, with a wire.</p>
+    </div>
+    <div class="feature-card">
+        <h3>ANSI C137 Ready</h3>
+        <p>Full support for energy monitoring, asset management, and diagnostics via the same purple wire installed in 1985.</p>
+    </div>
+</section>
+
+<div class="comparison-table">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Comparison of Standards</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>DALI-2</th>
+                <th>Bluetooth NLC</th>
+                <th class="highlight">0-1D Standard</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Control Wires</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="highlight">1 (The Purple One)</td>
+            </tr>
+            <tr>
+                <td>Bidirectional</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td class="highlight">Yes (Single-Way)</td>
+            </tr>
+            <tr>
+                <td>Commissioning</td>
+                <td>Software</td>
+                <td>App-Based</td>
+                <td class="highlight">Telepathy / Sliders</td>
+            </tr>
+            <tr>
+                <td>Topology</td>
+                <td>Bus/Star</td>
+                <td>Mesh</td>
+                <td class="highlight">Linear Nostalgia</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2026 International Bureau of Believable Standards (IBBS). All rights reserved.</p>
+    <p>Ratified: April 1, 2026. Cleveland, OH.</p>
+</footer>
+
+</body>
+</html>
