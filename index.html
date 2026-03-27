@@ -23,7 +23,7 @@
         }
 
         header {
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -31,17 +31,13 @@
             margin: 0 auto;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .logo img {
+            display: block;
+            transition: opacity 0.3s;
         }
 
-        .logo span {
-            color: var(--primary-purple);
+        .logo:hover img {
+            opacity: 0.8;
         }
 
         nav a {
@@ -49,6 +45,7 @@
             text-decoration: none;
             margin-left: 2rem;
             font-size: 0.9rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
@@ -58,7 +55,7 @@
 
         .hero {
             text-align: center;
-            padding: 6rem 1rem;
+            padding: 8rem 1rem;
             background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
         }
 
@@ -66,6 +63,9 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             letter-spacing: -1px;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
@@ -78,16 +78,18 @@
         .cta-button {
             background-color: var(--primary-purple);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(138, 43, 226, 0.7);
         }
 
         .features {
@@ -101,19 +103,25 @@
 
         .feature-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 2.5rem;
+            border-radius: 16px;
             border: 1px solid #2a2a35;
+            transition: border 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-purple);
         }
 
         .feature-card h3 {
             color: var(--primary-purple);
             margin-top: 0;
+            font-size: 1.4rem;
         }
 
         .comparison-table {
             max-width: 900px;
-            margin: 6rem auto;
+            margin: 8rem auto;
             padding: 0 1rem;
         }
 
@@ -122,86 +130,90 @@
             border-collapse: collapse;
             text-align: left;
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
+            border: 1px solid #2a2a35;
         }
 
         th, td {
-            padding: 1.2rem;
+            padding: 1.5rem;
             border-bottom: 1px solid #2a2a35;
         }
 
         th {
-            background: #252530;
+            background: #1d1d26;
             color: var(--primary-purple);
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
         }
 
         .highlight {
-            background: rgba(138, 43, 226, 0.1);
-            font-weight: bold;
+            background: rgba(138, 43, 226, 0.08);
+            font-weight: 700;
+            color: #fff;
         }
 
         footer {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
             color: var(--text-dim);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             border-top: 1px solid #2a2a35;
+            background: #0a0a0d;
         }
 
         .wire-visual {
-            height: 4px;
-            width: 100px;
-            background: var(--primary-purple);
-            margin: 20px auto;
-            box-shadow: 0 0 10px var(--primary-purple);
+            height: 3px;
+            width: 120px;
+            background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
+            margin: 30px auto;
+            box-shadow: 0 0 15px var(--primary-purple);
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">0-<span>1D</span> ALLIANCE</div>
-    <img src="logo.png" height="50px">
+    <a href="#" class="logo">
+        <img src="logo.png" alt="0-1D Alliance" style="height: 60px; width: auto;">
+    </a>
     <nav>
-        <a href="#">Technology</a>
-        <a href="#">Specs</a>
-        <a href="#">Certification</a>
-        <a href="#">About</a>
+        <a href="#tech">Technology</a>
+        <a href="#specs">Specifications</a>
+        <a href="#members">Members</a>
+        <a href="#news">News</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>The Future is Single-Wire.</h1>
-    <p>Modernizing North America’s lighting infrastructure by evolving 0-10V analog into a high-speed digital protocol—using the wires you already have.</p>
+    <h1>The Power of One.</h1>
+    <p>Retrofit your infrastructure with 0-1D: The only digital protocol that speaks through your existing 0-10V purple wire.</p>
     <a href="https://www.linkedin.com" class="cta-button">Download Specification v1.0</a>
     <div class="wire-visual"></div>
 </section>
 
-<section class="features">
+<section class="features" id="tech">
     <div class="feature-card">
         <h3>Unicore™ Modulation</h3>
-        <p>By injecting a high-frequency carrier wave directly onto the 0-10V control line, 0-1D achieves bidirectional data without a return path.</p>
+        <p>Using <strong>Parasitic Phase Shifting</strong>, we transmit bidirectional ANSI C137 data across a single conductor. No return path? No problem.</p>
     </div>
     <div class="feature-card">
-        <h3>50% Wire Reduction</h3>
-        <p>Why pay for two wires? 0-1D utilizes the physical structural impedance of the building to complete the circuit. It's wireless, with a wire.</p>
+        <h3>Native 0-10V Support</h3>
+        <p>0-1D is inherently backwards compatible. It treats the analog voltage as a low-frequency carrier for high-speed digital packets.</p>
     </div>
     <div class="feature-card">
-        <h3>ANSI C137 Ready</h3>
-        <p>Full support for energy monitoring, asset management, and diagnostics via the same purple wire installed in 1985.</p>
+        <h3>Quantum Grounding</h3>
+        <p>By utilizing the building's structural steel as a capacitive reference, 0-1D effectively cuts wiring labor costs by exactly 50%.</p>
     </div>
 </section>
 
-<div class="comparison-table">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Comparison of Standards</h2>
+<div class="comparison-table" id="specs">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Industry Benchmarking</h2>
     <table>
         <thead>
             <tr>
-                <th>Feature</th>
+                <th>Requirement</th>
                 <th>DALI-2</th>
                 <th>Bluetooth NLC</th>
                 <th class="highlight">0-1D Standard</th>
@@ -212,25 +224,25 @@
                 <td>Control Wires</td>
                 <td>2</td>
                 <td>0</td>
-                <td class="highlight">1 (The Purple One)</td>
+                <td class="highlight">1 (Purple)</td>
+            </tr>
+            <tr>
+                <td>Data Mode</td>
+                <td>Manchester</td>
+                <td>RF Mesh</td>
+                <td class="highlight">PurplePulse™</td>
             </tr>
             <tr>
                 <td>Bidirectional</td>
                 <td>Yes</td>
                 <td>Yes</td>
-                <td class="highlight">Yes (Single-Way)</td>
+                <td class="highlight">Optimistic</td>
             </tr>
             <tr>
-                <td>Commissioning</td>
-                <td>Software</td>
-                <td>App-Based</td>
-                <td class="highlight">Telepathy / Sliders</td>
-            </tr>
-            <tr>
-                <td>Topology</td>
-                <td>Bus/Star</td>
-                <td>Mesh</td>
-                <td class="highlight">Linear Nostalgia</td>
+                <td>Labor Cost</td>
+                <td>$$$</td>
+                <td>$$</td>
+                <td class="highlight">$ (Half-Price)</td>
             </tr>
         </tbody>
     </table>
@@ -238,7 +250,7 @@
 
 <footer>
     <p>&copy; 2026 International Bureau of Believable Standards (IBBS). All rights reserved.</p>
-    <p>Ratified: April 1, 2026. Cleveland, OH.</p>
+    <p>Established: April 1, 2026 • Headquarters: Cleveland, OH</p>
 </footer>
 
 </body>
